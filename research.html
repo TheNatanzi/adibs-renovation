@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Adib's Research</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a reference binder: drawings full width, data in tables, minimal prose */
+:root{
+  --bg:#fbfaf8; --surface:#f2efea; --fg:#22201f; --muted:#5e5752; --rule:#ddd6cd;
+  --madder:#9c2f22; --indigo:#2c3e6b; --paper:#ffffff;
+  --display:"Literata",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#191716; --surface:#24211f; --fg:#ece6df; --muted:#b0a69c; --rule:#3a3531;
+  --madder:#e07a68; --indigo:#9fb2e6; --paper:#f4f1ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#191716; --surface:#24211f; --fg:#ece6df; --muted:#b0a69c; --rule:#3a3531;
+  --madder:#e07a68; --indigo:#9fb2e6; --paper:#f4f1ec; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+nav.bar{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;padding:10px 0 14px;border-bottom:1px solid var(--rule)}
+nav.bar a{color:var(--muted);text-decoration:none}
+nav.bar a:hover,nav.bar a:focus-visible{color:var(--madder)}
+h1,h2{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h1{font-size:2rem;margin:.3rem 0 .2rem}
+h2{font-size:1.3rem;margin:2.4rem 0 .8rem}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--madder)}
+.sub{color:var(--muted);margin:0 0 1rem}
+a{color:var(--indigo)}
+a:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:16px 0}
+.tile{background:var(--bg);padding:12px 14px;min-width:0}
+.tile .v{font:600 1.25rem/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.tile .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;vertical-align:top;padding:7px 12px;border-bottom:1px solid var(--rule)}
+th{background:var(--surface);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.n{font-family:var(--mono);white-space:nowrap}
+.src{font-size:12px;color:var(--muted)}
+figure{margin:12px 0;min-width:0}
+figure img{display:block;width:100%;height:auto;object-fit:contain;background:var(--paper);border:1px solid var(--rule);border-radius:4px}
+figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
+.mono{font-family:var(--mono);font-size:13px}
+figure.sheet{margin:16px 0 24px}
+figure.sheet a{display:block}
+figure.sheet img{cursor:zoom-in}
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}
+.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.6rem 0 .4rem}
+
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-block:4px 12px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px}
+.tabs a{font:600 14px/1 var(--body);padding:9px 14px;border-radius:6px;color:var(--muted);text-decoration:none;border:1px solid transparent}
+.tabs a[aria-current="page"]{color:var(--fg);background:var(--surface);border-color:var(--rule)}
+.tabs a:hover,.tabs a:focus-visible{color:var(--madder)}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;font:600 14px/1 var(--body);padding:10px 16px;border-radius:6px;text-decoration:none;border:1px solid var(--indigo)}
+.btn.pri{background:var(--indigo);color:var(--bg)}
+.btn.sec{color:var(--indigo);background:transparent}
+.btn:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.ba{grid-template-columns:minmax(0,1fr)}}
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.4rem 0 .4rem}
+ul.facts{padding-left:1.1rem;margin:.4rem 0}ul.facts li{margin:.3rem 0}
+.chart{border:1px solid var(--rule);border-radius:6px;padding:12px;overflow-x:auto;background:var(--bg)}
+.chart svg{display:block;min-width:640px;width:100%;height:auto}
+.chart .ax{stroke:var(--rule)}.chart .tk{fill:var(--muted);font:12px var(--mono)}
+.chart .done{fill:var(--indigo)}.chart .due{fill:var(--bg);stroke:var(--madder);stroke-width:2.5}
+.chart .bar{fill:var(--surface);stroke:var(--rule)}
+.chart .lb{fill:var(--fg);font:600 12px var(--body)}.chart .ld{fill:var(--muted);font:11px var(--mono)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.legend .l1::before{background:var(--indigo)}.legend .l2::before{border:2px solid var(--madder);width:7px;height:7px}
+td.r{text-align:right}tr.tot td{font-weight:700;border-top:2px solid var(--rule)}
+@media print{.top .acts,.tabs{display:none}.wrap{max-width:none;padding:0}figure.sheet{break-before:page}figure.sheet img{width:auto;max-width:100%;max-height:9.4in;margin:0 auto}h2{break-after:avoid}.tablewrap{overflow:visible}.chart svg{min-width:0}}
+</style>
+<div class="wrap">
+<div class="top"><nav class="tabs" aria-label="Pages"><a href="index.html">Renovation</a><a href="drawings.html">Drawings</a><a href="photos.html">Photos</a><a href="storage.html">Storage</a><a href="research.html" aria-current="page">Research</a></nav><div class="acts"><a class="btn sec" href="index.html">← Renovation plan</a></div></div>
+<style>
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.filters select,.filters input{font:14px var(--body);padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);color:var(--fg)}
+.filters input{flex:1 1 220px;min-width:0}
+.count{font:12px var(--mono);color:var(--muted);margin:6px 0}
+td .q{font-size:12px;color:var(--muted);font-style:italic;margin-top:4px}
+td.conf span{font:600 11px/1 var(--body);padding:3px 7px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.c-high{color:#2f6b3a}.c-medium{color:#94600b}.c-low{color:#a1271b}
+#rt{table-layout:fixed;width:100%}
+.hl td.n{white-space:normal;font:13px/1.45 var(--mono)}
+.hl td{vertical-align:top}
+#rt td{vertical-align:top;overflow-wrap:anywhere}
+#rt td.n{white-space:normal;font:12px/1.45 var(--mono)}
+#rt td a{overflow-wrap:anywhere}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.chips button{font:12px var(--body);padding:5px 10px;border:1px solid var(--rule);border-radius:99px;background:var(--bg);color:var(--fg);cursor:pointer}
+.chips button b{font-family:var(--mono);margin-left:4px}
+.chips button[aria-pressed=true]{border-color:var(--fg);background:var(--fg);color:var(--bg)}
+@media (max-width:700px){#rt thead{display:none}#rt,#rt tbody,#rt tr,#rt td{display:block;width:auto}#rt tr{border-bottom:1px solid var(--rule);padding:10px 0}#rt td{border:0;padding:3px 10px}}
+</style><p class="eyebrow">Web research · compiled Oct 2026</p>
+<h1>Research database</h1>
+<p class="sub">Outside research from public web sources (codes, vendors, guides). <strong>Not from the family's emails.</strong> Every row links to its source with a verbatim quote; check prices and code text before relying on them. Download: <a href="research.csv">CSV</a> · <a href="research.json">JSON</a></p>
+<h2>Headline numbers</h2><div class="tablewrap"><table class="hl"><thead><tr><th>Area</th><th>Item</th><th>Number</th><th>Rows</th></tr></thead><tbody><tr><td>Storage</td><td>Outdoor storage in C-R zone</td><td class="n">Banned except listed uses; containers need a planner ruling</td><td><a href="#" data-id="R003">R003</a> <a href="#" data-id="R011">R011</a></td></tr><tr><td>Storage</td><td>Building permit trigger</td><td class="n">> 120 sf (20 ft container ≈ 160 sf)</td><td><a href="#" data-id="R013">R013</a> <a href="#" data-id="R017">R017</a></td></tr><tr><td>Storage</td><td>ISO portable-storage coverage</td><td class="n">$10,000 · 90 days · within 100 ft</td><td><a href="#" data-id="R073">R073</a></td></tr><tr><td>Storage</td><td>Used 20 ft container, Oakland</td><td class="n">$1,345 – $1,899 + delivery</td><td><a href="#" data-id="R120">R120</a> <a href="#" data-id="R126">R126</a></td></tr><tr><td>Storage</td><td>20 ft container rent, East Bay</td><td class="n">$60 / 4 wk – $145 / mo + delivery</td><td><a href="#" data-id="R138">R138</a> <a href="#" data-id="R144">R144</a></td></tr><tr><td>Storage</td><td>Dry Box</td><td class="n">Does not serve California</td><td><a href="#" data-id="R153">R153</a></td></tr><tr><td>Storage</td><td>Delivery clearance</td><td class="n">75 ft (20 ft) · 120 ft (40 ft) straight</td><td><a href="#" data-id="R134">R134</a></td></tr><tr><td>Storage</td><td>Self-storage 10×20, ≤ 5 mi</td><td class="n">$194 – $441 / mo</td><td><a href="#" data-id="R188">R188</a> <a href="#" data-id="R197">R197</a></td></tr><tr><td>Storage</td><td>Monitored alarm</td><td class="n">$40 – $120 / mo + $300 – $2,000 install</td><td><a href="#" data-id="R079">R079</a> <a href="#" data-id="R081">R081</a></td></tr><tr><td>Renovation</td><td>Design review</td><td class="n">Required before building permit; minor if ≤ 500 sf</td><td><a href="#" data-id="R044">R044</a> <a href="#" data-id="R045">R045</a></td></tr><tr><td>Renovation</td><td>Glass doors + sidelights</td><td class="n">Safety glazing (CBC 2406.4)</td><td><a href="#" data-id="R233">R233</a> <a href="#" data-id="R234">R234</a></td></tr><tr><td>Renovation</td><td>Entry door</td><td class="n">32 in clear · ½ in threshold · 5 lb force</td><td><a href="#" data-id="R238">R238</a> <a href="#" data-id="R241">R241</a> <a href="#" data-id="R243">R243</a></td></tr><tr><td>Renovation</td><td>ADA path-of-travel cap</td><td class="n">20 % of cost if ≤ $209,208 (2026)</td><td><a href="#" data-id="R249">R249</a> <a href="#" data-id="R248">R248</a></td></tr><tr><td>Roof</td><td>Permit S26106 clock</td><td class="n">Start ≤ 12 mo of issue · finish ≤ 4 yr</td><td><a href="#" data-id="R299">R299</a> <a href="#" data-id="R300">R300</a></td></tr><tr><td>Roof</td><td>Federal solar credit (§48E)</td><td class="n">In service ≤ 2027-12-31 unless begun ≤ 2026-07-04</td><td><a href="#" data-id="R337">R337</a></td></tr></tbody></table></div>
+<h2>All findings</h2>
+<div class="filters">
+<label class="sr" for="f-topic" hidden>Topic</label><select id="f-topic"><option value="">All topics</option></select>
+<select id="f-app" aria-label="Applies to"><option value="">All areas</option><option value="storage">Storage</option><option value="renovation">Renovation</option><option value="roof">Roof &amp; solar</option></select>
+<select id="f-conf" aria-label="Confidence"><option value="">Any confidence</option><option>high</option><option>medium</option><option>low</option></select>
+<input id="f-q" type="search" placeholder="Search findings, values, sources" aria-label="Search">
+</div>
+<div class="chips" id="chips"></div>
+<p class="count" id="cnt">Loading…</p>
+<div class="tablewrap"><table id="rt"><colgroup><col style="width:14%"><col style="width:42%"><col style="width:18%"><col style="width:17%"><col style="width:9%"></colgroup><thead><tr><th>Topic</th><th>Finding</th><th>Value</th><th>Source</th><th>Confidence</th></tr></thead><tbody></tbody></table></div>
+<script>
+(function(){
+ const tb=document.querySelector('#rt tbody'),cnt=document.getElementById('cnt');
+ const ft=document.getElementById('f-topic'),fa=document.getElementById('f-app'),fc=document.getElementById('f-conf'),fq=document.getElementById('f-q');
+ let rows=[];
+ function el(t,c,txt){const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
+ function render(){
+  const q=fq.value.trim().toLowerCase();tb.textContent='';let n=0;
+  rows.forEach(r=>{
+   if(ft.value&&r.topic!==ft.value)return;
+   if(fa.value&&r.applies_to!==fa.value&&r.applies_to!=='both')return;
+   if(fc.value&&r.confidence!==fc.value)return;
+   if(q&&!(r.id+' '+r.topic+' '+r.subtopic+' '+r.finding+' '+r.value+' '+r.source_title+' '+r.quote).toLowerCase().includes(q))return;
+   n++;const tr=el('tr');
+   const t=el('td');t.appendChild(el('div','',r.topic));t.appendChild(el('div','src',r.subtopic));tr.appendChild(t);
+   const f=el('td');f.appendChild(el('div','',r.finding));if(r.quote)f.appendChild(el('div','q','“'+r.quote+'”'));tr.appendChild(f);
+   tr.appendChild(el('td','n',r.value||''));
+   const s=el('td');const a=el('a','',r.source_title||r.url);a.href=r.url;a.target='_blank';a.rel='noopener';s.appendChild(a);if(r.source_date)s.appendChild(el('div','src',r.source_date));tr.appendChild(s);
+   const c=el('td','conf');c.appendChild(el('span','c-'+r.confidence,r.confidence));tr.appendChild(c);
+   tb.appendChild(tr);});
+  cnt.textContent=n+' of '+rows.length+' rows';
+ }
+ fetch('research.json').then(r=>r.json()).then(d=>{rows=d;const ch=document.getElementById('chips');const cn={};d.forEach(r=>cn[r.topic]=(cn[r.topic]||0)+1);Object.keys(cn).sort().forEach(t=>{const o=el('option','',t);o.value=t;ft.appendChild(o);const b=el('button','',t);b.type='button';b.appendChild(el('b','',cn[t]));b.setAttribute('aria-pressed','false');b.onclick=()=>{ft.value=ft.value===t?'':t;sync();render();};ch.appendChild(b);});render();}).catch(()=>{cnt.textContent='Could not load research.json';});
+ function sync(){document.querySelectorAll('#chips button').forEach(b=>b.setAttribute('aria-pressed',String(b.firstChild.textContent===ft.value)));}
+ ft.addEventListener('change',sync);
+ document.querySelectorAll('a[data-id]').forEach(a=>a.onclick=e=>{e.preventDefault();ft.value='';fa.value='';fc.value='';sync();fq.value=a.dataset.id;render();document.getElementById('f-q').scrollIntoView({behavior:'smooth'});});
+ [ft,fa,fc].forEach(x=>x.addEventListener('change',render));fq.addEventListener('input',render);
+})();
+</script>
+</div>
+</body></html>
