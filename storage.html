@@ -1,0 +1,167 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Adib's Storage Toolkit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a reference binder: drawings full width, data in tables, minimal prose */
+:root{
+  --bg:#fbfaf8; --surface:#f2efea; --fg:#22201f; --muted:#5e5752; --rule:#ddd6cd;
+  --madder:#9c2f22; --indigo:#2c3e6b; --paper:#ffffff;
+  --display:"Literata",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#191716; --surface:#24211f; --fg:#ece6df; --muted:#b0a69c; --rule:#3a3531;
+  --madder:#e07a68; --indigo:#9fb2e6; --paper:#f4f1ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#191716; --surface:#24211f; --fg:#ece6df; --muted:#b0a69c; --rule:#3a3531;
+  --madder:#e07a68; --indigo:#9fb2e6; --paper:#f4f1ec; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+nav.bar{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;padding:10px 0 14px;border-bottom:1px solid var(--rule)}
+nav.bar a{color:var(--muted);text-decoration:none}
+nav.bar a:hover,nav.bar a:focus-visible{color:var(--madder)}
+h1,h2{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h1{font-size:2rem;margin:.3rem 0 .2rem}
+h2{font-size:1.3rem;margin:2.4rem 0 .8rem}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--madder)}
+.sub{color:var(--muted);margin:0 0 1rem}
+a{color:var(--indigo)}
+a:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:16px 0}
+.tile{background:var(--bg);padding:12px 14px;min-width:0}
+.tile .v{font:600 1.25rem/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.tile .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;vertical-align:top;padding:7px 12px;border-bottom:1px solid var(--rule)}
+th{background:var(--surface);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.n{font-family:var(--mono);white-space:nowrap}
+.src{font-size:12px;color:var(--muted)}
+figure{margin:12px 0;min-width:0}
+figure img{display:block;width:100%;height:auto;object-fit:contain;background:var(--paper);border:1px solid var(--rule);border-radius:4px}
+figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
+.mono{font-family:var(--mono);font-size:13px}
+figure.sheet a{display:block}
+figure.sheet img{cursor:zoom-in}
+.dl{margin:0 0 12px}
+.dlbtn{display:inline-block;font:600 14px/1 var(--body);padding:10px 16px;border-radius:6px;background:var(--indigo);color:var(--bg);text-decoration:none}
+.dlbtn:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+@media print{.wrap{max-width:none;padding:0}figure.sheet{break-before:page}figure.sheet img{width:auto;max-width:100%;max-height:9.4in;margin:0 auto}.dl,nav.bar{display:none}figure.sheet{break-inside:avoid}h2{break-after:avoid}.tablewrap{overflow:visible}}
+</style>
+
+<div class="wrap">
+<p class="dl"><a class="dlbtn" href="Adibs-Storage-Toolkit.pdf" download>Download PDF</a></p>
+<p class="eyebrow">Reference toolkit · 19 Oct 2026</p>
+<h1>1426 S Main St — Storage</h1>
+<p class="sub">Where the overflow rugs are, what the site allows, and what insurance requires. Includes Hamed's 2023 container research. Store plans: <a href="index.html">separate toolkit</a>.</p>
+<nav class="bar" aria-label="Sections"><a href="#now">Stock today</a><a href="#site">Site</a><a href="#research">Hamed's research</a><a href="#insurance">Insurance terms</a><a href="#rules">Rules</a><a href="#vendor">Vendor</a><a href="#people">People</a><a href="#docs">Documents</a></nav>
+
+<div class="tiles">
+  <div class="tile"><div class="v">~1,000</div><div class="k">Rugs at 1426, floor-stacked</div></div>
+  <div class="tile"><div class="v">$1,900</div><div class="k">Avg cost per rug (2023)</div></div>
+  <div class="tile"><div class="v">$25,000</div><div class="k">Theft sub-limit per location (2023 quote)</div></div>
+  <div class="tile"><div class="v">900 sf</div><div class="k">Existing warehouse, 1420 S Main</div></div>
+  <div class="tile"><div class="v">30 ft</div><div class="k">Creek structural setback</div></div>
+</div>
+
+<h2 id="now">Stock today</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Location</th><th>Use</th><th>Rugs</th><th>Insured contents (2023 quote)</th><th>Source</th></tr></thead><tbody>
+<tr><td>1426 S Main St</td><td>Store, 3,727 sf, built 1957</td><td class="n">~1,000 (hundreds &lt;4×6 ft, &lt;$50 cost)</td><td class="n">$1,500,000</td><td class="src">Hamed to Curt 9/22/2023 · Scottsdale quote</td></tr>
+<tr><td>1420 S Main St / 1495 Newell Ave Ste 200</td><td>2nd-floor space, rated "Warehouses – Private", 900 sf</td><td class="n">~10–20</td><td class="n">$300,000</td><td class="src">Same · State Farm emails 2019</td></tr>
+<tr><td>1432 S Main St</td><td>Family building, built 1947, ≈2,105 sf; leased to a tenant</td><td class="n">0</td><td class="n">$300,000 (to move to landlord policy)</td><td class="src">Same · 1432 LOI 2023</td></tr>
+</tbody></table></div>
+
+<h2 id="site">Site</h2>
+<figure class="sheet"><a href="sheets/survey1318-1.jpg" target="_blank" rel="noopener"><img src="sheets/survey1318-1.jpg" alt="Full location survey of 1424 and 1426 South Main Street, 2013, with two red rectangles marking candidate container locations, the 5-foot roadway and utility easement, the structure setback line and the projected top of creek bank." loading="lazy"></a><figcaption>Location survey dwg 1318, Earl L. Gray, 2013, 1″ = 8′, with two container locations drawn in red (file dated and sent by Hamed 15 May 2023). Creek at lower right. <a href="sheets/survey1318-1.jpg" target="_blank" rel="noopener">Open full size</a> · <a href="docs/1318-container-location.pdf" target="_blank">PDF</a></figcaption></figure>
+<div class="tablewrap"><table>
+<thead><tr><th>Red mark</th><th>Position on survey</th><th>Side of structure setback line</th><th>Overlaps</th></tr></thead><tbody>
+<tr><td>North</td><td>Between the building's north wall and the 5′ non-exclusive roadway &amp; utility easement (Radford 2854 OR 76)</td><td>Building side</td><td>Rear parking area</td></tr>
+<tr><td>East</td><td>East lot line, beside the trash enclosure</td><td>Creek side, at projected top of creek bank</td><td class="n">5 parking spots</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Survey data</th><th>Value</th></tr></thead><tbody>
+<tr><td>Lot area</td><td class="n">20,169 sf excluding the dedication</td></tr>
+<tr><td>Easements</td><td>Per Old Republic Title prelim. report 0147012515; 5′ roadway &amp; utility easements on north side; creek watercourse easement</td></tr>
+<tr><td>Spot elevations near the marks</td><td class="n">≈45.1–47.5 ft (assumed datum)</td></tr>
+</tbody></table></div>
+<p><strong>3D scan of building and lot edges:</strong> <a href="https://my.matterport.com/show/?m=MCQFszUDenU" target="_blank" rel="noopener">Matterport tour</a></p>
+
+<h2 id="research">Hamed's container research (2023)</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Date</th><th>Who</th><th>What was said</th></tr></thead><tbody>
+<tr><td class="n">2023-05-15</td><td>Hamed</td><td>Marked two container locations on survey 1318 ("Container Location")</td></tr>
+<tr><td class="n">2023-09-05</td><td>Hamed → Curt</td><td>"If I have a storage container on site (like a 20ft shipping container), would inventory stored in the storage container be covered by our insurance (ie against theft)?"</td></tr>
+<tr><td class="n">2023-09-06</td><td>Curt</td><td>"It would need a good layer of Security… Unless there's a 3rd party security cameras or a 3rd party central alarm on the container theft would not be covered."</td></tr>
+<tr><td class="n">2023-09-06</td><td>Hamed → Curt</td><td>"If I added a third party monitored door sensor and motion sensor, which is tied into the central alarm system, it's covered?" Curt: "Yes, that is correct."</td></tr>
+<tr><td class="n">2023-09-06</td><td>Curt</td><td>"I would put some barriers that would slow down the removal of the inventory if they breach the lock."</td></tr>
+<tr><td class="n">2023-09-22</td><td>Underwriter (via Curt)</td><td>Concern: rug values and stacking "causing a high fire load"; no sprinkler or fire alarm shown on the Acord.</td></tr>
+<tr><td class="n">2023-09-22</td><td>Hamed</td><td>Rugs are handspun wool (little silk), flame-retardant (IWTO data, below); avg cost $1,900; imported; stacked on the ground; 3rd-party monitored fire alarm; no sprinklers; hydrants along Main St.</td></tr>
+<tr><td class="n">2023-10-16</td><td>Curt</td><td>Alternative quote came back higher; renewal stays with Scottsdale, moved to Coastal Underwriters (broker-of-record letter).</td></tr>
+</tbody></table></div>
+<p class="src">No later email on containers was found: no vendor quotes, listings, delivery terms or city container rules (Gmail searched 19 Oct 2026).</p>
+<figure><img src="img/wool-fire-facts.png" alt="Wool and fire facts table: limiting oxygen index wool 25.2 percent, cotton 18.4, nylon 20.1, polyester 20.6, rayon 19.7; ignition temperature wool 570 to 600 C, cotton 255, nylon 485 to 575, polyester 485 to 560, rayon 420; wool does not melt." loading="lazy" style="max-width:520px"><figcaption>Wool fire facts sent to the underwriter, 22 Sep 2023 (source: IWTO, <a href="docs/IWTO-Wool-Fire.pdf" target="_blank">PDF</a>).</figcaption></figure>
+
+<h2 id="insurance">Insurance terms (Scottsdale quote QT-03483061, policy 11/3/2023–11/3/2024)</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Location</th><th>Class</th><th>Contents (BPP)</th><th>Theft sub-limit</th><th>Building</th><th>Deductible</th></tr></thead><tbody>
+<tr><td>1426 S Main</td><td>Antique stores incl. oriental rug stores · joisted masonry · 1957</td><td class="n">$1,500,000 RC</td><td class="n">$25,000</td><td class="n">$600,000</td><td class="n">$5,000</td></tr>
+<tr><td>1420 S Main</td><td>Same class; liability rated "Warehouses – Private", 900 sf</td><td class="n">$300,000 RC</td><td class="n">$25,000</td><td>—</td><td class="n">$5,000</td></tr>
+<tr><td>1432 S Main</td><td>Same class · joisted masonry · 1947</td><td class="n">$300,000 ACV</td><td class="n">$25,000</td><td class="n">$500,000</td><td class="n">$5,000</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Policy item</th><th>Value</th></tr></thead><tbody>
+<tr><td>Endorsements tied to theft</td><td>CFS-24s Theft Sub-limit · CP 12 11 Burglary &amp; Robbery Protective Safeguards</td></tr>
+<tr><td>Binding conditions</td><td>Alarm certificate for all three locations; updated Acord with alarm and building info</td></tr>
+<tr><td>Container theft cover</td><td>Only with 3rd-party monitored alarm or cameras; monitored door + motion sensors accepted (Curt, 9/2023)</td></tr>
+<tr><td>Fire protection on file</td><td>3rd-party monitored fire alarm · no sprinklers · protection class 03</td></tr>
+<tr><td>Current policy</td><td>Terms after Nov 2024 not in email; confirm with Curt</td></tr>
+</tbody></table></div>
+
+<h2 id="rules">Rules on this lot</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Constraint</th><th>Value</th><th>Source</th></tr></thead><tbody>
+<tr><td>Creek structural setback (CCCFCD)</td><td class="n">30 ft from 2.5:1 line off creek toe; ≈⅓ of building already inside</td><td class="src">Staff report 5/28/2020</td></tr>
+<tr><td>Creek Preserve Area</td><td class="n">50 ft from creek centerline</td><td class="src">Staff report 5/28/2020</td></tr>
+<tr><td>Building to the rear</td><td>"cannot build to the rear of it"</td><td class="src">LCA Architects, 1/31/2020</td></tr>
+<tr><td>Parking reduction</td><td class="n">max 20%; staff unlikely to support (2019)</td><td class="src">PRT 2019 · staff report 2020</td></tr>
+<tr><td>Access path</td><td>Shared with neighbor; recorded revocable license; used by Republic Services trucks</td><td class="src">License v09, 2020</td></tr>
+<tr><td>Container / shed permit</td><td class="n">Not found in email; ask the city</td><td class="src">—</td></tr>
+</tbody></table></div>
+
+<h2 id="vendor">Vendor</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Item</th><th>Dry Box (dryboxusa.com)</th></tr></thead><tbody>
+<tr><td>History</td><td>Used by Hamid in Utah</td></tr>
+<tr><td>Products</td><td class="n">New &amp; used containers, 10–53 ft · rent or buy</td></tr>
+<tr><td>Modifications</td><td>Doors, windows, custom builds</td></tr>
+<tr><td>Listed service area</td><td>WA, OR, ID, MT, UT, NV, CO, WY, FL. California not listed</td></tr>
+</tbody></table></div>
+
+<h2 id="people">People</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Name</th><th>Role</th><th>Contact</th></tr></thead><tbody>
+<tr><td>Ali Adib, P.E.</td><td>Civil engineer, local lead</td><td class="mono">ata@ataeng.net · (650) 363-2338</td></tr>
+<tr><td>Medi Adibnatanzi</td><td>Coordinator</td><td class="mono">thenatanzi@gmail.com</td></tr>
+<tr><td>Hamed Adibnatanzi</td><td>Did the 2023 container and insurance research</td><td class="mono">hadib@adiblaw.com</td></tr>
+<tr><td>Curt Bulloch</td><td>Insurance broker (CA Lic 0I36002)</td><td class="mono">curtbulloch@gmail.com · (925) 640-0485</td></tr>
+<tr><td>City of Walnut Creek</td><td>Building / Planning</td><td class="mono">buildingtech@walnut-creek.org · (925) 943-5834</td></tr>
+</tbody></table></div>
+
+<h2 id="docs">Documents</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Document</th><th>Date</th><th>Email</th></tr></thead><tbody>
+<tr><td><a href="docs/1318-container-location.pdf" target="_blank">Survey 1318 with container marks</a></td><td class="n">2013 / 2023-05-15</td><td><a href="https://mail.google.com/mail/?authuser=thenatanzi@gmail.com#all/thread-f:1766006024805990986" target="_blank">Container Location</a></td></tr>
+<tr><td>Container insurance thread (Hamed ↔ Curt)</td><td class="n">2023-09-05 → 10-16</td><td><a href="https://mail.google.com/mail/?authuser=thenatanzi@gmail.com#all/thread-f:1776307279606295096" target="_blank">Storage Container Question</a></td></tr>
+<tr><td><a href="docs/Scottsdale-Quote-2023.pdf" target="_blank">Scottsdale insurance quote</a></td><td class="n">2023-08-21</td><td>Same thread</td></tr>
+<tr><td><a href="docs/IWTO-Wool-Fire.pdf" target="_blank">IWTO wool fire facts</a></td><td class="n">2023-09-22</td><td>Same thread</td></tr>
+<tr><td><a href="docs/ref/2020-05-28-staff-report.pdf" target="_blank">Planning Commission staff report</a></td><td class="n">2020-05-28</td><td>Staff Report</td></tr>
+<tr><td><a href="docs/ref/2019-08-PRT-19-011-city-letter.pdf" target="_blank">City PRT 19-011 report</a></td><td class="n">2019-08-14</td><td>1426 S. Main PRT</td></tr>
+</tbody></table></div>
+<p class="src">Gmail links open only for the account owner.</p>
+</div>
+</body></html>
