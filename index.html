@@ -1,8 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.ph{margin:0}
-.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
-.h3{font:600 1.05rem/1.3 var(--display);margin:1.6rem 0 .4rem}
-</style></head><body><title>Adib's Store Toolkit</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Adib's Renovation</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -52,32 +48,87 @@ figcaption{font-size:12px;color:var(--muted);margin-top:4px}
 figure.sheet{margin:16px 0 24px}
 figure.sheet a{display:block}
 figure.sheet img{cursor:zoom-in}
-.dl{margin:0 0 12px}
-.dlbtn{display:inline-block;font:600 14px/1 var(--body);padding:10px 16px;border-radius:6px;background:var(--indigo);color:var(--bg);text-decoration:none}
-.dlbtn:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
-@media print{.wrap{max-width:none;padding:0}figure.sheet{break-before:page}figure.sheet img{width:auto;max-width:100%;max-height:9.4in;margin:0 auto}.dl,nav.bar{display:none}figure.sheet{break-inside:avoid}h2{break-after:avoid}.tablewrap{overflow:visible}}
-</style>
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}
+.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.6rem 0 .4rem}
 
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-block:4px 12px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px}
+.tabs a{font:600 14px/1 var(--body);padding:9px 14px;border-radius:6px;color:var(--muted);text-decoration:none;border:1px solid transparent}
+.tabs a[aria-current="page"]{color:var(--fg);background:var(--surface);border-color:var(--rule)}
+.tabs a:hover,.tabs a:focus-visible{color:var(--madder)}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;font:600 14px/1 var(--body);padding:10px 16px;border-radius:6px;text-decoration:none;border:1px solid var(--indigo)}
+.btn.pri{background:var(--indigo);color:var(--bg)}
+.btn.sec{color:var(--indigo);background:transparent}
+.btn:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.ba{grid-template-columns:minmax(0,1fr)}}
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.4rem 0 .4rem}
+ul.facts{padding-left:1.1rem;margin:.4rem 0}ul.facts li{margin:.3rem 0}
+.chart{border:1px solid var(--rule);border-radius:6px;padding:12px;overflow-x:auto;background:var(--bg)}
+.chart svg{display:block;min-width:640px;width:100%;height:auto}
+.chart .ax{stroke:var(--rule)}.chart .tk{fill:var(--muted);font:12px var(--mono)}
+.chart .done{fill:var(--indigo)}.chart .due{fill:var(--bg);stroke:var(--madder);stroke-width:2.5}
+.chart .bar{fill:var(--surface);stroke:var(--rule)}
+.chart .lb{fill:var(--fg);font:600 12px var(--body)}.chart .ld{fill:var(--muted);font:11px var(--mono)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.legend .l1::before{background:var(--indigo)}.legend .l2::before{border:2px solid var(--madder);width:7px;height:7px}
+td.r{text-align:right}tr.tot td{font-weight:700;border-top:2px solid var(--rule)}
+@media print{.top .acts,.tabs{display:none}.wrap{max-width:none;padding:0}figure.sheet{break-before:page}figure.sheet img{width:auto;max-width:100%;max-height:9.4in;margin:0 auto}h2{break-after:avoid}.tablewrap{overflow:visible}.chart svg{min-width:0}}
+</style>
 <div class="wrap">
-<p class="dl"><a class="dlbtn" href="Adibs-Store-Toolkit.pdf" download>Download PDF</a></p>
+<div class="top"><nav class="tabs" aria-label="Pages"><a href="index.html" aria-current="page">Renovation</a><a href="drawings.html">Drawings</a><a href="photos.html">Photos</a><a href="storage.html">Storage</a></nav><div class="acts"><a class="btn sec" href="storage.html">Storage plan →</a><a class="btn pri" href="Adibs-Store-Toolkit.pdf" download>Download PDF</a></div></div>
 <p class="eyebrow">Reference toolkit · 19 Oct 2026</p>
 <h1>1426 S Main St — Adib's Persian Rug Co</h1>
-<p class="sub">Walnut Creek, CA 94596 · APN 183-030-005 · Existing conditions, rules and prior drawings for planning the store. Storage: <a href="storage.html">separate toolkit</a>.</p>
-<nav class="bar" aria-label="Sections">
-  <a href="#site">Site</a><a href="#building">Building</a><a href="#rules">Rules</a><a href="#ata">2024 ATA drawings</a><a href="#roof">Roof &amp; solar</a><a href="#photos">Photos</a><a href="#drawings">All drawings</a><a href="#people">People</a><a href="#docs">Documents</a>
-</nav>
-
+<p class="sub">Walnut Creek, CA 94596 · APN 183-030-005 · <a href="https://my.matterport.com/show/?m=MCQFszUDenU" target="_blank" rel="noopener">3D Matterport tour</a></p>
 <div class="tiles">
   <div class="tile"><div class="v">22,137 sf</div><div class="k">Lot (0.51 ac)</div></div>
   <div class="tile"><div class="v">3,727 sf</div><div class="k">Building, 1957</div></div>
   <div class="tile"><div class="v">96′-6″ × 41′-2″</div><div class="k">Footprint, overall</div></div>
   <div class="tile"><div class="v">16 + 3</div><div class="k">Parking spots on site + off site</div></div>
 </div>
-
-<!-- SITE -->
-<h2 id="site">Site</h2>
-<figure class="sheet"><a href="sheets/permit-1.jpg" target="_blank" rel="noopener"><img src="sheets/permit-1.jpg" alt="ATA sheet A-0.1 cover: sheet index, vicinity map, project data, aerial view, site plan with lot lines 120.46, 144.02, 130.5 and 155.25 feet, scope of work." loading="lazy"></a><figcaption>A-0.1 Cover sheet and site plan, ATA permit set, 2024-08-10 · <a href="sheets/permit-1.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/survey1318-1.jpg" target="_blank" rel="noopener"><img src="sheets/survey1318-1.jpg" alt="Location survey of 1424 and 1426 South Main Street, APN 183-030-005, Earl L. Gray, April 2013: building, parking, easements, structure setback line, projected top of creek bank, two red container marks." loading="lazy"></a><figcaption>Location survey dwg 1318, Earl L. Gray, 2013-04-05 (rev. 2013-05-28), scale 1″ = 8′ · <a href="sheets/survey1318-1.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+<h2 id="ata">2024 ATA front design — summary</h2>
+<p class="src">Ali Adib, P.E., ATA Engineering. All sheets on the <a href="drawings.html">Drawings</a> tab.</p>
+<div class="ba"><figure class="ph"><a href="photos/p06.jpg" target="_blank" rel="noopener"><img src="photos/p06.jpg" alt="Existing front of the store from South Main Street, July 2023, with open roofed walkways either side of the entry." loading="lazy"></a><figcaption>Existing · 25 Jul 2023 · <a href="photos/p06.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure><figure class="ph"><a href="photos/ata-mockup-front.jpg" target="_blank" rel="noopener"><img src="photos/ata-mockup-front.jpg" alt="Same photo with the 2024 ATA design drawn in: both walkways enclosed in glass on a low curb, taller glass entry doors." loading="lazy"></a><figcaption>2024 ATA design, illustrative mockup (not to scale; not an ATA rendering) · <a href="photos/ata-mockup-front.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure></div>
+<h3 class="h3">Square footage added</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>New enclosed space</th><th>Width</th><th>Depth</th><th class="r">Area</th><th>Basis</th></tr></thead><tbody>
+<tr><td>West display area</td><td class="n">17′-0″ ±</td><td class="n">5′-2″</td><td class="n r">≈ 88 sf</td><td class="src">A-2.1 width · A-1.1 depth</td></tr>
+<tr><td>East display area</td><td class="n">20′-9¼″</td><td class="n">5′-2″</td><td class="n r">≈ 107 sf</td><td class="src">A-2.1 width · A-1.1 depth</td></tr>
+<tr><td>Entry vestibule (porch enclosed)</td><td class="n">12′-9″</td><td class="n">≈ 13′ (scaled)</td><td class="n r">≈ 166 sf</td><td class="src">A-2.1 width · depth scaled from A-2.1</td></tr>
+<tr class="tot"><td>Total newly enclosed</td><td></td><td></td><td class="n r">≈ 361 sf</td><td class="src">All non-conditioned; existing building ≈ 3,727 sf</td></tr>
+</tbody></table></div>
+<h3 class="h3">Summary of changes</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Change</th><th>Existing</th><th>2024 ATA design</th><th>Sheet</th></tr></thead><tbody>
+<tr><td>Walkway bays</td><td>Open, roofed walkways</td><td>Enclosed display areas, non-conditioned</td><td class="src">A-2.1</td></tr>
+<tr><td>Bay walls</td><td>None</td><td>2×6 pony wall, 3-coat ⅞″ stucco both faces, fixed tempered double-pane glazing</td><td class="src">A-3.1</td></tr>
+<tr><td>Bay floor</td><td>Walkway paving</td><td>New 4″ slab, #3 @ 12″ o.c. each way, on new footing</td><td class="src">S-1, SD-1</td></tr>
+<tr><td>Walkway posts</td><td>7×7 / 6×6 posts</td><td>New 6×6 posts (3 locations); existing headers kept</td><td class="src">A-2.1, S-1</td></tr>
+<tr><td>Entry</td><td>Open porch; (2) 3′-0″ × 6′-8″ doors</td><td>New outer glass door pair 7′-0″ × 8′-0″ (2 × 3′-6″), double-pane tempered; fixed sidelights 2′-3″± × 7′-6″; existing doors stay as inner doors → secure vestibule</td><td class="src">A-2.1, ATA email 8/6/2024</td></tr>
+<tr><td>Security doors</td><td>None</td><td>New security door from each display area to the porch</td><td class="src">A-2.1</td></tr>
+<tr><td>Porch posts</td><td>—</td><td>New P.T. 4×6 posts at the new entry</td><td class="src">A-2.1</td></tr>
+<tr><td>Roof, electrical, HVAC, site</td><td colspan="2">Unchanged (all work under existing roofs; electrical as-is; non-conditioned; no site work). A-2.1 notes "new lights by others".</td><td class="src">ATA letter 8/8/2024 · A-0.1</td></tr>
+</tbody></table></div>
+<p class="src">Plan status: permit set dated 2024-08-10, not submitted. Stamp shows CE49976 exp. 6-30-25; sheets cite 2022 codes (2025 codes in effect since 1 Jan 2026).</p>
+<h2 id="roof">Roof &amp; solar — permit S26106 (SolCore)</h2>
+<ul class="facts">
+<li><strong>Scope:</strong> new roof (GAF asphalt shingles) + rooftop solar, by SolCore, Inc. Separate from the ATA front work; already financed.</li>
+<li><strong>Solar:</strong> 26.84 kW PV system on ≈ 1,286 sf of roof.</li>
+<li><strong>Storage:</strong> 3 batteries, 34.5 kW.</li>
+<li><strong>Shingles:</strong> GAF color deck sent 20 Jul 2026 (Charcoal, Aged Chestnut, Coastal Slate, Hickory, Sagewood, Sandalwood, Stone Gray); selection not on record.</li>
+<li><strong>Status:</strong> issued 13 Oct 2026; no inspections yet; start date not scheduled.</li>
+<li><strong>Drawings:</strong> SolCore's approved plans not yet obtained (city portal login or request from SolCore).</li>
+</ul>
+<div class="chart"><svg viewBox="0 0 1100 200" role="img" aria-label="Permit S26106 timeline: issued 13 Oct 2026; work must start by 13 Oct 2027 and finish by 13 Oct 2030."><rect class="bar" x="104.5" y="92" width="226.5" height="16" rx="3"/><text class="ld" x="217.8" y="124" text-anchor="middle">365-day start window</text><line class="ax" x1="40" y1="100" x2="1060" y2="100" stroke-width="2"/><line class="ax" x1="154.2" y1="94" x2="154.2" y2="106"/><text class="tk" x="154.2" y="190" text-anchor="middle">2027</text><line class="ax" x1="380.6" y1="94" x2="380.6" y2="106"/><text class="tk" x="380.6" y="190" text-anchor="middle">2028</text><line class="ax" x1="607.7" y1="94" x2="607.7" y2="106"/><text class="tk" x="607.7" y="190" text-anchor="middle">2029</text><line class="ax" x1="834.2" y1="94" x2="834.2" y2="106"/><text class="tk" x="834.2" y="190" text-anchor="middle">2030</text><circle class="done" cx="62.3" cy="100" r="6"/><circle class="done" cx="71.0" cy="100" r="6"/><circle class="done" cx="95.2" cy="100" r="6"/><circle class="done" cx="104.5" cy="100" r="6"/><circle class="due" cx="331.0" cy="100" r="7"/><line class="ax" x1="331.0" y1="108" x2="331.0" y2="140"/><text class="lb" x="331.0" y="156" text-anchor="middle">Work must start by</text><text class="ld" x="331.0" y="170" text-anchor="middle">2027-10-13</text><circle class="due" cx="1011.0" cy="100" r="7"/><line class="ax" x1="1011.0" y1="108" x2="1011.0" y2="140"/><text class="lb" x="1011.0" y="156" text-anchor="middle">Work must finish by</text><text class="ld" x="1011.0" y="170" text-anchor="middle">2030-10-13</text><line class="ax" x1="62.3" y1="70" x2="62.3" y2="94"/><text class="lb" x="40.0" y="40">Plan review: Aug 6 → Oct 13, 2026</text><text class="ld" x="40.0" y="56">routed 08-06 · not approved 08-20 · resubmitted 09-28 · approved 10-12 · issued 10-13</text></svg></div>
+<div class="legend"><span class="l1">Completed</span><span class="l2">Deadline</span></div>
+<p class="src">Source: City of Walnut Creek permit portal and issuance notice, 13 Oct 2026.</p>
+<h2 id="site">Site &amp; building</h2>
 <div class="tablewrap"><table>
 <thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead><tbody>
 <tr><td>Zoning / General Plan</td><td class="n">C-R / GR</td><td class="src">PRT 19-011, Aug 2019</td></tr>
@@ -86,12 +137,6 @@ figure.sheet img{cursor:zoom-in}
 <tr><td>Height limit</td><td class="n">35 ft</td><td class="src">City letter 11/22/2019</td></tr>
 <tr><td>Shared access</td><td class="n">Recorded revocable license with neighbor (Sinovest)</td><td class="src">License v09, 2020</td></tr>
 </tbody></table></div>
-
-<!-- BUILDING -->
-<h2 id="building">Building — existing</h2>
-<p><strong>3D scan:</strong> <a href="https://my.matterport.com/show/?m=MCQFszUDenU" target="_blank" rel="noopener">Matterport tour</a> <span class="src">(Ali, Nov 2023; measure inside the viewer)</span></p>
-<figure class="sheet"><a href="sheets/bid-2.jpg" target="_blank" rel="noopener"><img src="sheets/bid-2.jpg" alt="Existing and demolition floor plan of the whole building, quarter-inch scale, overall 96 feet 6 inches by 41 feet 2 inches." loading="lazy"></a><figcaption>A-1.1 Existing / demolition floor plan, whole building, 1/4″ = 1′-0″ (ATA bidding set, 2024-08-05) · <a href="sheets/bid-2.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-7.jpg" target="_blank" rel="noopener"><img src="sheets/bid-7.jpg" alt="Roof framing plan of the whole building with rafters, ridges, beams and roof planes." loading="lazy"></a><figcaption>S-2 Roof framing plan, whole building (ATA bidding set, 2024-08-05) · <a href="sheets/bid-7.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
 <div class="tablewrap"><table>
 <thead><tr><th>Element</th><th>Dimension</th><th>Sheet</th></tr></thead><tbody>
 <tr><td>Overall length × depth</td><td class="n">96′-6″ × 41′-2″</td><td class="src">A-1.1</td></tr>
@@ -101,8 +146,6 @@ figure.sheet img{cursor:zoom-in}
 <tr><td>Walkway posts</td><td class="n">6×6 / 7×7, under existing headers</td><td class="src">A-1.1, A-2.1</td></tr>
 <tr><td>Roof pitches</td><td class="n">5:12 main · 2:12 / 1:12 walkways · flat at mech.</td><td class="src">A-1.1</td></tr>
 </tbody></table></div>
-
-<!-- RULES -->
 <h2 id="rules">Rules on this lot</h2>
 <div class="tablewrap"><table>
 <thead><tr><th>Constraint</th><th>Value</th><th>Effect</th><th>Source</th></tr></thead><tbody>
@@ -115,85 +158,7 @@ figure.sheet img{cursor:zoom-in}
 <tr><td>Building code</td><td class="n">2025 California codes (eff. 1 Jan 2026)</td><td>2024 ATA set cites 2022 codes</td><td class="src">A-0.1</td></tr>
 </tbody></table></div>
 
-<!-- ATA -->
-<h2 id="ata">2024 ATA drawings (prior design, for reference)</h2>
-<p class="src">Ali Adib, P.E., ATA Engineering. Bidding set 2 Aug 2024; permit set dated 10 Aug 2024 (A-0.1, A-1.1, A-2.1, A-3.1, S-1, SD-1). Not submitted.</p>
 
-<h3 class="h3">2024 ATA design shown on the storefront</h3>
-<figure class="sheet"><a href="photos/p06.jpg" target="_blank" rel="noopener"><img src="photos/p06.jpg" alt="Existing front of the store from South Main Street, July 2023: open roofed walkways either side of the entry gable." loading="lazy"></a><figcaption>Existing, 25 Jul 2023 · <a href="photos/p06.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="photos/ata-mockup-front.jpg" target="_blank" rel="noopener"><img src="photos/ata-mockup-front.jpg" alt="Same photo with the 2024 ATA design drawn in: both walkways enclosed with glass storefront on a low curb, taller glass entry doors." loading="lazy"></a><figcaption>Illustrative mockup of sheets A-2.1 / A-3.1: walkway bays enclosed in glass on a stucco curb; entry doors (2) 3′-6″ × 8′-0″. Drawn by Claude over the photo; not to scale, not an ATA rendering · <a href="photos/ata-mockup-front.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/permit-3.jpg" target="_blank" rel="noopener"><img src="sheets/permit-3.jpg" alt="Existing partial roof plan and proposed partial floor plan: two new display areas in the walkway bays and the entry porch with new doors." loading="lazy"></a><figcaption>A-2.1 Existing partial roof plan &amp; proposed partial floor plan (permit set, 2024-08-10) · <a href="sheets/permit-3.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/permit-4.jpg" target="_blank" rel="noopener"><img src="sheets/permit-4.jpg" alt="Existing and proposed front elevations." loading="lazy"></a><figcaption>A-3.1 Existing and proposed front elevations (permit set, 2024-08-10) · <a href="sheets/permit-4.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<div class="tablewrap"><table>
-<thead><tr><th>Item</th><th>Existing</th><th>2024 drawing</th></tr></thead><tbody>
-<tr><td>Walkway bays</td><td>Open, roofed</td><td>Enclosed display areas, non-conditioned</td></tr>
-<tr><td>Bay walls</td><td>—</td><td>2×6 pony wall, 3-coat stucco, fixed tempered double-pane glazing</td></tr>
-<tr><td>Bay floor</td><td>Walkway</td><td>New 4″ slab, #3 @ 12″ o.c. e.w.</td></tr>
-<tr><td>Posts</td><td>6×6 / 7×7</td><td>New 6×6 and P.T. 4×6; existing headers kept</td></tr>
-<tr><td>Entry doors</td><td class="n">(2) 3′-0″ × 6′-8″</td><td class="n">(2) 3′-6″ × 8′-0″; taller sidelights</td></tr>
-<tr><td>Security</td><td>—</td><td>Secondary entry door, buffer zone at porch</td></tr>
-<tr><td>Electrical / HVAC / site</td><td>—</td><td>No change</td></tr>
-<tr><td>Stamp</td><td colspan="2" class="n">CE49976, exp. 6-30-25</td></tr>
-</tbody></table></div>
-
-<!-- ROOF -->
-<h2 id="roof">Roof &amp; solar — permit S26106</h2>
-<div class="tablewrap"><table>
-<thead><tr><th>Item</th><th>Value</th></tr></thead><tbody>
-<tr><td>Type</td><td>Solar System – Commercial (PV); re-roof by same contractor</td></tr>
-<tr><td>System</td><td class="n">26.84 kW PV · 1,285.72 sf · 3 batteries, 34.5 kW</td></tr>
-<tr><td>Contractor</td><td>SolCore, Inc. · GAF shingle deck sent 7/20/2026</td></tr>
-<tr><td>Issued</td><td class="n">2026-10-13</td></tr>
-<tr><td>Must start by</td><td class="n">2027-10-13 (365 days)</td></tr>
-<tr><td>Must finish by</td><td class="n">2030-10-13 (4 years)</td></tr>
-<tr><td>Inspections</td><td>None yet</td></tr>
-<tr><td>Funding</td><td>Separate, already financed</td></tr>
-</tbody></table></div>
-
-<!-- PHOTOS -->
-<h2 id="photos">Photos (25 &amp; 31 Jul 2023)</h2>
-<p class="src">Album "California Gallery Walnut Creek", 16 photos. Click any photo for full size.</p>
-<div class="phgrid">
-<figure class="ph"><a href="photos/p01.jpg" target="_blank" rel="noopener"><img src="photos/p01.jpg" alt="Exterior, entry and east wing" loading="lazy"></a><figcaption>Exterior, entry and east wing</figcaption></figure>
-<figure class="ph"><a href="photos/p02.jpg" target="_blank" rel="noopener"><img src="photos/p02.jpg" alt="Exterior from the parking lot" loading="lazy"></a><figcaption>Exterior from the parking lot</figcaption></figure>
-<figure class="ph"><a href="photos/p03.jpg" target="_blank" rel="noopener"><img src="photos/p03.jpg" alt="East wing and display window" loading="lazy"></a><figcaption>East wing and display window</figcaption></figure>
-<figure class="ph"><a href="photos/p04.jpg" target="_blank" rel="noopener"><img src="photos/p04.jpg" alt="East wing" loading="lazy"></a><figcaption>East wing</figcaption></figure>
-<figure class="ph"><a href="photos/p05.jpg" target="_blank" rel="noopener"><img src="photos/p05.jpg" alt="East wing walkway" loading="lazy"></a><figcaption>East wing walkway</figcaption></figure>
-<figure class="ph"><a href="photos/p06.jpg" target="_blank" rel="noopener"><img src="photos/p06.jpg" alt="Front elevation from South Main St" loading="lazy"></a><figcaption>Front elevation from South Main St</figcaption></figure>
-<figure class="ph"><a href="photos/p07.jpg" target="_blank" rel="noopener"><img src="photos/p07.jpg" alt="Display window, inside" loading="lazy"></a><figcaption>Display window, inside</figcaption></figure>
-<figure class="ph"><a href="photos/p08.jpg" target="_blank" rel="noopener"><img src="photos/p08.jpg" alt="Stacked rugs" loading="lazy"></a><figcaption>Stacked rugs</figcaption></figure>
-<figure class="ph"><a href="photos/p09.jpg" target="_blank" rel="noopener"><img src="photos/p09.jpg" alt="Rolled rugs" loading="lazy"></a><figcaption>Rolled rugs</figcaption></figure>
-<figure class="ph"><a href="photos/p10.jpg" target="_blank" rel="noopener"><img src="photos/p10.jpg" alt="Showroom, front display area" loading="lazy"></a><figcaption>Showroom, front display area</figcaption></figure>
-<figure class="ph"><a href="photos/p11.jpg" target="_blank" rel="noopener"><img src="photos/p11.jpg" alt="Showroom" loading="lazy"></a><figcaption>Showroom</figcaption></figure>
-<figure class="ph"><a href="photos/p12.jpg" target="_blank" rel="noopener"><img src="photos/p12.jpg" alt="Main showroom, vaulted ceiling" loading="lazy"></a><figcaption>Main showroom, vaulted ceiling</figcaption></figure>
-<figure class="ph"><a href="photos/p13.jpg" target="_blank" rel="noopener"><img src="photos/p13.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
-<figure class="ph"><a href="photos/p14.jpg" target="_blank" rel="noopener"><img src="photos/p14.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
-<figure class="ph"><a href="photos/p15.jpg" target="_blank" rel="noopener"><img src="photos/p15.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
-<figure class="ph"><a href="photos/p16.jpg" target="_blank" rel="noopener"><img src="photos/p16.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
-</div>
-
-<!-- DRAWINGS -->
-<h2 id="drawings">All drawing sheets (17)</h2>
-<p class="src">Every sheet shown whole. Click any sheet to open it at full resolution and zoom.</p>
-<figure class="sheet"><a href="sheets/permit-1.jpg" target="_blank" rel="noopener"><img src="sheets/permit-1.jpg" alt="Sheet A-0.1: Cover sheet, site plan" loading="lazy"></a><figcaption><strong>A-0.1</strong> Cover sheet, site plan · Permit set 2024-08-10 · <a href="sheets/permit-1.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/permit-2.jpg" target="_blank" rel="noopener"><img src="sheets/permit-2.jpg" alt="Sheet A-1.1: Existing / demolition partial floor plan" loading="lazy"></a><figcaption><strong>A-1.1</strong> Existing / demolition partial floor plan · Permit set · <a href="sheets/permit-2.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/permit-3.jpg" target="_blank" rel="noopener"><img src="sheets/permit-3.jpg" alt="Sheet A-2.1: Partial roof plan and proposed partial floor plan" loading="lazy"></a><figcaption><strong>A-2.1</strong> Partial roof plan &amp; proposed partial floor plan · Permit set · <a href="sheets/permit-3.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/permit-4.jpg" target="_blank" rel="noopener"><img src="sheets/permit-4.jpg" alt="Sheet A-3.1: Front elevations" loading="lazy"></a><figcaption><strong>A-3.1</strong> Front elevations · Permit set · <a href="sheets/permit-4.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/permit-5.jpg" target="_blank" rel="noopener"><img src="sheets/permit-5.jpg" alt="Sheet S-1: Partial structural roof and foundation plans" loading="lazy"></a><figcaption><strong>S-1</strong> Partial structural roof &amp; foundation plans · Permit set · <a href="sheets/permit-5.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/permit-6.jpg" target="_blank" rel="noopener"><img src="sheets/permit-6.jpg" alt="Sheet SD-1: Structural sections, details and notes" loading="lazy"></a><figcaption><strong>SD-1</strong> Structural sections, details &amp; notes · Permit set · <a href="sheets/permit-6.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-1.jpg" target="_blank" rel="noopener"><img src="sheets/bid-1.jpg" alt="Sheet A-0.3: Existing and proposed site plan" loading="lazy"></a><figcaption><strong>A-0.3</strong> Existing &amp; proposed site plan · Bidding set 2024-08-05 · <a href="sheets/bid-1.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-2.jpg" target="_blank" rel="noopener"><img src="sheets/bid-2.jpg" alt="Sheet A-1.1: Existing / demolition floor plan, whole building" loading="lazy"></a><figcaption><strong>A-1.1</strong> Existing / demolition floor plan, whole building · Bidding set · <a href="sheets/bid-2.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-3.jpg" target="_blank" rel="noopener"><img src="sheets/bid-3.jpg" alt="Sheet A-2.1: Proposed floor plan, whole building" loading="lazy"></a><figcaption><strong>A-2.1</strong> Proposed floor plan, whole building · Bidding set · <a href="sheets/bid-3.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-4.jpg" target="_blank" rel="noopener"><img src="sheets/bid-4.jpg" alt="Sheet A-3.1: Elevations" loading="lazy"></a><figcaption><strong>A-3.1</strong> Elevations · Bidding set · <a href="sheets/bid-4.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-5.jpg" target="_blank" rel="noopener"><img src="sheets/bid-5.jpg" alt="Sheet A-4.1: Sections" loading="lazy"></a><figcaption><strong>A-4.1</strong> Sections · Bidding set · <a href="sheets/bid-5.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-6.jpg" target="_blank" rel="noopener"><img src="sheets/bid-6.jpg" alt="Sheet S-1: Foundation plan" loading="lazy"></a><figcaption><strong>S-1</strong> Foundation plan · Bidding set · <a href="sheets/bid-6.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-7.jpg" target="_blank" rel="noopener"><img src="sheets/bid-7.jpg" alt="Sheet S-2: Roof framing plan" loading="lazy"></a><figcaption><strong>S-2</strong> Roof framing plan · Bidding set · <a href="sheets/bid-7.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/bid-8.jpg" target="_blank" rel="noopener"><img src="sheets/bid-8.jpg" alt="Sheet SD-1: Structural details and notes" loading="lazy"></a><figcaption><strong>SD-1</strong> Structural details &amp; notes · Bidding set · <a href="sheets/bid-8.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/a11-1.jpg" target="_blank" rel="noopener"><img src="sheets/a11-1.jpg" alt="Sheet A1.1: Existing / demolition + proposed partial floor plans" loading="lazy"></a><figcaption><strong>A1.1</strong> Existing / demolition + proposed partial floor plans · Sent 2024-08-06 · <a href="sheets/a11-1.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/a21-1.jpg" target="_blank" rel="noopener"><img src="sheets/a21-1.jpg" alt="Sheet A2.1: Existing + proposed front elevations" loading="lazy"></a><figcaption><strong>A2.1</strong> Existing + proposed front elevations · Sent 2024-08-06 · <a href="sheets/a21-1.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-<figure class="sheet"><a href="sheets/survey1318-1.jpg" target="_blank" rel="noopener"><img src="sheets/survey1318-1.jpg" alt="Sheet 1318: Location survey" loading="lazy"></a><figcaption><strong>1318</strong> Location survey · Earl L. Gray, 2013 · <a href="sheets/survey1318-1.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
-
-<!-- PEOPLE -->
 <h2 id="people">People</h2>
 <div class="tablewrap"><table>
 <thead><tr><th>Name</th><th>Role</th><th>Contact</th></tr></thead><tbody>
@@ -205,26 +170,6 @@ figure.sheet img{cursor:zoom-in}
 <tr><td>City Planning (2019–20)</td><td>C. Griffin, A. Carreon</td><td class="mono">Griffin@ / Carreon@walnut-creek.org</td></tr>
 </tbody></table></div>
 
-<!-- DOCS -->
-<h2 id="docs">Documents</h2>
-<div class="tablewrap"><table>
-<thead><tr><th>Document</th><th>Date</th><th>Pages</th></tr></thead><tbody>
-<tr><td><a href="docs/2024-08-08-ATA-permit-set.pdf" target="_blank">ATA permit set</a></td><td class="n">2024-08-10</td><td class="n">6</td></tr>
-<tr><td><a href="docs/2024-08-02-ATA-bidding-set.pdf" target="_blank">ATA bidding set</a></td><td class="n">2024-08-05</td><td class="n">8</td></tr>
-<tr><td><a href="docs/A1.1.pdf" target="_blank">A1.1 floor plans</a> · <a href="docs/A2.1.pdf" target="_blank">A2.1 elevations</a></td><td class="n">2024-08-05</td><td class="n">1 + 1</td></tr>
-<tr><td><a href="docs/2024-08-05-summary-of-submittal-letter.pdf" target="_blank">ATA submittal summary letter</a></td><td class="n">2024-08-08</td><td class="n">1</td></tr>
-<tr><td><a href="docs/1318-container-location.pdf" target="_blank">Location survey 1318</a></td><td class="n">2013</td><td class="n">1</td></tr>
-<tr><td><a href="docs/Shingle-Colors.pdf" target="_blank">GAF shingle colors (SolCore)</a></td><td class="n">2026-07-20</td><td class="n">1</td></tr>
-<tr><td><a href="docs/ref/2019-08-PRT-19-011-city-letter.pdf" target="_blank">City PRT 19-011 report</a></td><td class="n">2019-08-14</td><td class="n">6</td></tr>
-<tr><td><a href="docs/ref/2019-11-22-Y19-124-AppStat1.pdf" target="_blank">City letter Y19-124 #1</a></td><td class="n">2019-11-22</td><td class="n">20</td></tr>
-<tr><td><a href="docs/ref/2020-04-17-Y19-124-AppStat2.pdf" target="_blank">City letter Y19-124 #2</a></td><td class="n">2020-04-17</td><td class="n">9</td></tr>
-<tr><td><a href="docs/ref/2020-05-28-staff-report.pdf" target="_blank">Planning Commission staff report</a></td><td class="n">2020-05-28</td><td class="n">6</td></tr>
-<tr><td><a href="docs/ref/2019-12-03-revocable-license-v09.pdf" target="_blank">Revocable license (access)</a></td><td class="n">2019-12 / 2020-01</td><td class="n">17</td></tr>
-<tr><td><a href="docs/ref/2019-10-17-pre-application-review.pdf" target="_blank">LCA pre-application + exhibits</a></td><td class="n">2019-10-17</td><td class="n">14</td></tr>
-<tr><td><a href="docs/ref/2019-12-10-response-cover-letter-v01.pdf" target="_blank">LCA response to city (draft)</a></td><td class="n">2019-12-10</td><td class="n">16</td></tr>
-<tr><td><a href="docs/ref/2019-06-PRT-submittal-set.pdf" target="_blank">LCA PRT set</a> · <a href="docs/ref/2019-09-pre-app-submittal.pdf" target="_blank">pre-app set</a> · <a href="docs/ref/2019-10-08-updated-set.pdf" target="_blank">updated set</a> · <a href="docs/ref/2019-10-notes-about-parking.pdf" target="_blank">parking notes</a> · <a href="docs/ref/2019-06-sketch.pdf" target="_blank">sketch</a></td><td class="n">2019</td><td class="n">—</td></tr>
-<tr><td><a href="docs/ref/2021-08-unit-plans.pdf" target="_blank">LCA unit plans</a> · <a href="docs/ref/2021-09-updated-plans-210909.pdf" target="_blank">plans 210909.1</a> · <a href="docs/ref/2021-09-planning-application.pdf" target="_blank">planning app</a> · <a href="docs/ref/2021-09-SB330-preliminary-application.pdf" target="_blank">SB 330 app</a></td><td class="n">2021</td><td class="n">—</td></tr>
-</tbody></table></div>
-<p class="src">Not available here: S26106 approved plans and inspection card (city portal); LCA "5.1 Updated set", "WCMC 10-2 parking code", initial design options, TJKM parking study (in emails too large to retrieve; open in Gmail).</p>
+
 </div>
 </body></html>

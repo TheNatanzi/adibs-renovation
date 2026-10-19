@@ -1,0 +1,109 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Adib's Photos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a reference binder: drawings full width, data in tables, minimal prose */
+:root{
+  --bg:#fbfaf8; --surface:#f2efea; --fg:#22201f; --muted:#5e5752; --rule:#ddd6cd;
+  --madder:#9c2f22; --indigo:#2c3e6b; --paper:#ffffff;
+  --display:"Literata",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#191716; --surface:#24211f; --fg:#ece6df; --muted:#b0a69c; --rule:#3a3531;
+  --madder:#e07a68; --indigo:#9fb2e6; --paper:#f4f1ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#191716; --surface:#24211f; --fg:#ece6df; --muted:#b0a69c; --rule:#3a3531;
+  --madder:#e07a68; --indigo:#9fb2e6; --paper:#f4f1ec; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+nav.bar{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;padding:10px 0 14px;border-bottom:1px solid var(--rule)}
+nav.bar a{color:var(--muted);text-decoration:none}
+nav.bar a:hover,nav.bar a:focus-visible{color:var(--madder)}
+h1,h2{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h1{font-size:2rem;margin:.3rem 0 .2rem}
+h2{font-size:1.3rem;margin:2.4rem 0 .8rem}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--madder)}
+.sub{color:var(--muted);margin:0 0 1rem}
+a{color:var(--indigo)}
+a:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:16px 0}
+.tile{background:var(--bg);padding:12px 14px;min-width:0}
+.tile .v{font:600 1.25rem/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.tile .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;vertical-align:top;padding:7px 12px;border-bottom:1px solid var(--rule)}
+th{background:var(--surface);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.n{font-family:var(--mono);white-space:nowrap}
+.src{font-size:12px;color:var(--muted)}
+figure{margin:12px 0;min-width:0}
+figure img{display:block;width:100%;height:auto;object-fit:contain;background:var(--paper);border:1px solid var(--rule);border-radius:4px}
+figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
+.mono{font-family:var(--mono);font-size:13px}
+figure.sheet{margin:16px 0 24px}
+figure.sheet a{display:block}
+figure.sheet img{cursor:zoom-in}
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}
+.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.6rem 0 .4rem}
+
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-block:4px 12px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px}
+.tabs a{font:600 14px/1 var(--body);padding:9px 14px;border-radius:6px;color:var(--muted);text-decoration:none;border:1px solid transparent}
+.tabs a[aria-current="page"]{color:var(--fg);background:var(--surface);border-color:var(--rule)}
+.tabs a:hover,.tabs a:focus-visible{color:var(--madder)}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;font:600 14px/1 var(--body);padding:10px 16px;border-radius:6px;text-decoration:none;border:1px solid var(--indigo)}
+.btn.pri{background:var(--indigo);color:var(--bg)}
+.btn.sec{color:var(--indigo);background:transparent}
+.btn:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.ba{grid-template-columns:minmax(0,1fr)}}
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.4rem 0 .4rem}
+ul.facts{padding-left:1.1rem;margin:.4rem 0}ul.facts li{margin:.3rem 0}
+.chart{border:1px solid var(--rule);border-radius:6px;padding:12px;overflow-x:auto;background:var(--bg)}
+.chart svg{display:block;min-width:640px;width:100%;height:auto}
+.chart .ax{stroke:var(--rule)}.chart .tk{fill:var(--muted);font:12px var(--mono)}
+.chart .done{fill:var(--indigo)}.chart .due{fill:var(--bg);stroke:var(--madder);stroke-width:2.5}
+.chart .bar{fill:var(--surface);stroke:var(--rule)}
+.chart .lb{fill:var(--fg);font:600 12px var(--body)}.chart .ld{fill:var(--muted);font:11px var(--mono)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.legend .l1::before{background:var(--indigo)}.legend .l2::before{border:2px solid var(--madder);width:7px;height:7px}
+td.r{text-align:right}tr.tot td{font-weight:700;border-top:2px solid var(--rule)}
+@media print{.top .acts,.tabs{display:none}.wrap{max-width:none;padding:0}figure.sheet{break-before:page}figure.sheet img{width:auto;max-width:100%;max-height:9.4in;margin:0 auto}h2{break-after:avoid}.tablewrap{overflow:visible}.chart svg{min-width:0}}
+</style>
+<div class="wrap">
+<div class="top"><nav class="tabs" aria-label="Pages"><a href="index.html">Renovation</a><a href="drawings.html">Drawings</a><a href="photos.html" aria-current="page">Photos</a><a href="storage.html">Storage</a></nav><div class="acts"><a class="btn sec" href="storage.html">Storage plan →</a></div></div>
+<p class="eyebrow">Photos · 25 &amp; 31 Jul 2023</p>
+<h1>Store photos</h1>
+<p class="src">Album "California Gallery Walnut Creek". The front view is on the <a href="index.html">Renovation</a> tab. Click any photo for full size.</p>
+<div class="phgrid">
+<figure class="ph"><a href="photos/p01.jpg" target="_blank" rel="noopener"><img src="photos/p01.jpg" alt="Exterior, entry and east wing" loading="lazy"></a><figcaption>Exterior, entry and east wing</figcaption></figure>
+<figure class="ph"><a href="photos/p02.jpg" target="_blank" rel="noopener"><img src="photos/p02.jpg" alt="Exterior from the parking lot" loading="lazy"></a><figcaption>Exterior from the parking lot</figcaption></figure>
+<figure class="ph"><a href="photos/p03.jpg" target="_blank" rel="noopener"><img src="photos/p03.jpg" alt="East wing and display window" loading="lazy"></a><figcaption>East wing and display window</figcaption></figure>
+<figure class="ph"><a href="photos/p04.jpg" target="_blank" rel="noopener"><img src="photos/p04.jpg" alt="East wing" loading="lazy"></a><figcaption>East wing</figcaption></figure>
+<figure class="ph"><a href="photos/p05.jpg" target="_blank" rel="noopener"><img src="photos/p05.jpg" alt="East wing walkway" loading="lazy"></a><figcaption>East wing walkway</figcaption></figure>
+<figure class="ph"><a href="photos/p07.jpg" target="_blank" rel="noopener"><img src="photos/p07.jpg" alt="Display window, inside" loading="lazy"></a><figcaption>Display window, inside</figcaption></figure>
+<figure class="ph"><a href="photos/p08.jpg" target="_blank" rel="noopener"><img src="photos/p08.jpg" alt="Stacked rugs" loading="lazy"></a><figcaption>Stacked rugs</figcaption></figure>
+<figure class="ph"><a href="photos/p09.jpg" target="_blank" rel="noopener"><img src="photos/p09.jpg" alt="Rolled rugs" loading="lazy"></a><figcaption>Rolled rugs</figcaption></figure>
+<figure class="ph"><a href="photos/p10.jpg" target="_blank" rel="noopener"><img src="photos/p10.jpg" alt="Showroom, front display area" loading="lazy"></a><figcaption>Showroom, front display area</figcaption></figure>
+<figure class="ph"><a href="photos/p11.jpg" target="_blank" rel="noopener"><img src="photos/p11.jpg" alt="Showroom" loading="lazy"></a><figcaption>Showroom</figcaption></figure>
+<figure class="ph"><a href="photos/p12.jpg" target="_blank" rel="noopener"><img src="photos/p12.jpg" alt="Main showroom, vaulted ceiling" loading="lazy"></a><figcaption>Main showroom, vaulted ceiling</figcaption></figure>
+<figure class="ph"><a href="photos/p13.jpg" target="_blank" rel="noopener"><img src="photos/p13.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
+<figure class="ph"><a href="photos/p14.jpg" target="_blank" rel="noopener"><img src="photos/p14.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
+<figure class="ph"><a href="photos/p15.jpg" target="_blank" rel="noopener"><img src="photos/p15.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
+<figure class="ph"><a href="photos/p16.jpg" target="_blank" rel="noopener"><img src="photos/p16.jpg" alt="Main showroom" loading="lazy"></a><figcaption>Main showroom</figcaption></figure>
+</div>
+
+
+</div>
+</body></html>

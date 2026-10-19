@@ -45,21 +45,47 @@ figcaption{font-size:12px;color:var(--muted);margin-top:4px}
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
 .mono{font-family:var(--mono);font-size:13px}
+figure.sheet{margin:16px 0 24px}
 figure.sheet a{display:block}
 figure.sheet img{cursor:zoom-in}
-.dl{margin:0 0 12px}
-.dlbtn{display:inline-block;font:600 14px/1 var(--body);padding:10px 16px;border-radius:6px;background:var(--indigo);color:var(--bg);text-decoration:none}
-.dlbtn:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
-@media print{.wrap{max-width:none;padding:0}figure.sheet{break-before:page}figure.sheet img{width:auto;max-width:100%;max-height:9.4in;margin:0 auto}.dl,nav.bar{display:none}figure.sheet{break-inside:avoid}h2{break-after:avoid}.tablewrap{overflow:visible}}
-</style>
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}
+.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.6rem 0 .4rem}
 
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-block:4px 12px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px}
+.tabs a{font:600 14px/1 var(--body);padding:9px 14px;border-radius:6px;color:var(--muted);text-decoration:none;border:1px solid transparent}
+.tabs a[aria-current="page"]{color:var(--fg);background:var(--surface);border-color:var(--rule)}
+.tabs a:hover,.tabs a:focus-visible{color:var(--madder)}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;font:600 14px/1 var(--body);padding:10px 16px;border-radius:6px;text-decoration:none;border:1px solid var(--indigo)}
+.btn.pri{background:var(--indigo);color:var(--bg)}
+.btn.sec{color:var(--indigo);background:transparent}
+.btn:focus-visible{outline:2px solid var(--madder);outline-offset:2px}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.ba{grid-template-columns:minmax(0,1fr)}}
+.phgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ph{margin:0}.ph img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.h3{font:600 1.05rem/1.3 var(--display);margin:1.4rem 0 .4rem}
+ul.facts{padding-left:1.1rem;margin:.4rem 0}ul.facts li{margin:.3rem 0}
+.chart{border:1px solid var(--rule);border-radius:6px;padding:12px;overflow-x:auto;background:var(--bg)}
+.chart svg{display:block;min-width:640px;width:100%;height:auto}
+.chart .ax{stroke:var(--rule)}.chart .tk{fill:var(--muted);font:12px var(--mono)}
+.chart .done{fill:var(--indigo)}.chart .due{fill:var(--bg);stroke:var(--madder);stroke-width:2.5}
+.chart .bar{fill:var(--surface);stroke:var(--rule)}
+.chart .lb{fill:var(--fg);font:600 12px var(--body)}.chart .ld{fill:var(--muted);font:11px var(--mono)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.legend .l1::before{background:var(--indigo)}.legend .l2::before{border:2px solid var(--madder);width:7px;height:7px}
+td.r{text-align:right}tr.tot td{font-weight:700;border-top:2px solid var(--rule)}
+@media print{.top .acts,.tabs{display:none}.wrap{max-width:none;padding:0}figure.sheet{break-before:page}figure.sheet img{width:auto;max-width:100%;max-height:9.4in;margin:0 auto}h2{break-after:avoid}.tablewrap{overflow:visible}.chart svg{min-width:0}}
+</style>
 <div class="wrap">
-<p class="dl"><a class="dlbtn" href="Adibs-Storage-Toolkit.pdf" download>Download PDF</a></p>
+<div class="top"><nav class="tabs" aria-label="Pages"><a href="index.html">Renovation</a><a href="drawings.html">Drawings</a><a href="photos.html">Photos</a><a href="storage.html" aria-current="page">Storage</a></nav><div class="acts"><a class="btn sec" href="index.html">← Renovation plan</a><a class="btn pri" href="Adibs-Storage-Toolkit.pdf" download>Download PDF</a></div></div>
 <p class="eyebrow">Reference toolkit · 19 Oct 2026</p>
 <h1>1426 S Main St — Storage</h1>
-<p class="sub">Where the overflow rugs are, what the site allows, and what insurance requires. Includes Hamed's 2023 container research. Store plans: <a href="index.html">separate toolkit</a>.</p>
-<nav class="bar" aria-label="Sections"><a href="#now">Stock today</a><a href="#site">Site</a><a href="#research">Hamed's research</a><a href="#insurance">Insurance terms</a><a href="#rules">Rules</a><a href="#vendor">Vendor</a><a href="#people">People</a><a href="#docs">Documents</a></nav>
-
+<p class="sub">Where the overflow rugs are, what the site allows, and what insurance requires. Includes Hamed's 2023 container research.</p>
 <div class="tiles">
   <div class="tile"><div class="v">~1,000</div><div class="k">Rugs at 1426, floor-stacked</div></div>
   <div class="tile"><div class="v">$1,900</div><div class="k">Avg cost per rug (2023)</div></div>
@@ -163,5 +189,6 @@ figure.sheet img{cursor:zoom-in}
 <tr><td><a href="docs/ref/2019-08-PRT-19-011-city-letter.pdf" target="_blank">City PRT 19-011 report</a></td><td class="n">2019-08-14</td><td>1426 S. Main PRT</td></tr>
 </tbody></table></div>
 <p class="src">Gmail links open only for the account owner.</p>
+
 </div>
 </body></html>
