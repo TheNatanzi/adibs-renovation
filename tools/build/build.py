@@ -70,7 +70,7 @@ changes='''<div class="tablewrap"><table>
 <tr><td>Roof, electrical, HVAC, site</td><td colspan="2">Unchanged (all work under existing roofs; electrical as-is; non-conditioned; no site work). A-2.1 notes "new lights by others".</td><td class="src">ATA letter 8/8/2024 · A-0.1</td></tr>
 </tbody></table></div>
 <p class="src">Plan status: permit set dated 2024-08-10, not submitted. Stamp shows CE49976 exp. 6-30-25; sheets cite 2022 codes (2025 codes in effect since 1 Jan 2026).</p>'''
-ba=fig('photos/p06.jpg','Existing front of the store from South Main Street, July 2023, with open roofed walkways either side of the entry.','Existing storefront · 25 Jul 2023','ph')
+ba='<div class="ba">'+fig('photos/p06.jpg','Existing front of the store from South Main Street, July 2023, with open roofed walkways either side of the entry.','Existing storefront · 25 Jul 2023','ph')+fig('photos/ata-render-front.jpg','Same storefront with the 2024 ATA design: both walkways enclosed in dark bronze glass on a low curb in front of the existing white brick wall, new glass entry door pair with sidelights; agapanthus removed.','2024 ATA design (A-1.1, A-3.1) on the storefront · AI image edit, illustrative, not to scale, not an ATA rendering','ph')+'</div>'
 
 # roof timeline (SVG, one scale)
 import datetime as dt
